@@ -1,0 +1,11 @@
+keys:
+  - &lily age1amaa55e7nusv904a9ucfvtnjlw4srtet42suehey6u3yc4t2xc5sdldepj
+creation_rules:
+  - path_regex: secrets/common.yaml$
+    key_groups:
+    - age:
+      - *lily
+  - path_regex: secrets/lily.yaml$
+    key_groups:
+    - age:
+      - *lily
