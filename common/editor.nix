@@ -8,6 +8,7 @@
 
     systemPackages = with pkgs; [
       file
+      kak-lsp
       kakoune
     ];
   };
