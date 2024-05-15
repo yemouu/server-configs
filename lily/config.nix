@@ -25,7 +25,6 @@
   services = {
     acpid.enable = true;
     fail2ban.enable = true;
-    fwupd.enable = true;
     smartd.enable = true;
     thermald.enable = true;
   };
