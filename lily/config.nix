@@ -13,9 +13,6 @@
     secrets = {
       "passwordHashes/root".neededForUsers = true;
       "passwordHashes/mou".neededForUsers = true;
-      "esquid/token" = {
-        owner = "esquid";
-      };
     };
   };
 
