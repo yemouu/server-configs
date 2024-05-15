@@ -3,6 +3,7 @@ let
   servePath = "/data/dufs";
   dufsConfig = pkgs.writeText "config.yaml" (lib.generators.toYAML { } {
     allow-all = true;
+    compress = "high";
     serve-path = "${servePath}";
   });
   startDufs = pkgs.writeShellScript "dufsStart" ''
