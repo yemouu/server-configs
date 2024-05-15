@@ -1,5 +1,6 @@
 { config, pkgs, self, ... }: {
   imports = [
+    ../common/services/dufs.nix
     ../common/services/esquid.nix
     ../common/services/openssh.nix
     ./hardware.nix
