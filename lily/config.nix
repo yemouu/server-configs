@@ -2,6 +2,7 @@
   imports = [
     ../common/services/dufs.nix
     ../common/services/esquid.nix
+    ../common/services/libvirt.nix
     ../common/services/openssh.nix
     ./hardware.nix
     ./packages.nix
@@ -29,6 +30,8 @@
     smartd.enable = true;
     thermald.enable = true;
   };
+
+  security.polkit.enable = true;
 
   environment = {
     sessionVariables = {
