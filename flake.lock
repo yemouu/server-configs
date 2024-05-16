@@ -87,11 +87,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1715534503,
-        "narHash": "sha256-5ZSVkFadZbFP1THataCaSf0JH2cAH3S29hU9rrxTEqk=",
+        "lastModified": 1715787315,
+        "narHash": "sha256-cYApT0NXJfqBkKcci7D9Kr4CBYZKOQKDYA23q8XNuWg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2057814051972fa1453ddfb0d98badbea9b83c06",
+        "rev": "33d1e753c82ffc557b4a585c77de43d4c922ebb5",
         "type": "github"
       },
       "original": {
@@ -155,15 +155,15 @@
       "locked": {
         "lastModified": 1705635077,
         "narHash": "sha256-itxXV1qG8plLbiW6beGabzuKUMf7DzOObLAT5miRUOs=",
-        "owner": "yemou",
-        "repo": "scripts",
+        "ref": "refs/heads/master",
         "rev": "b5bcc101b1ea4b1d9544d14e45a00507e19b9a78",
-        "type": "gitlab"
+        "revCount": 27,
+        "type": "git",
+        "url": "https://codeberg.org/yemou/scripts"
       },
       "original": {
-        "owner": "yemou",
-        "repo": "scripts",
-        "type": "gitlab"
+        "type": "git",
+        "url": "https://codeberg.org/yemou/scripts"
       }
     }
   },

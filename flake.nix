@@ -14,7 +14,7 @@
     impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
     yemou-scripts = {
-      url = "gitlab:yemou/scripts";
+      url = "git+https://codeberg.org/yemou/scripts";
       # url = "path:/data/local-flakes/scripts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
