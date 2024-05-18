@@ -7,7 +7,7 @@
     ../common/development
   ];
 
-  # nixpkgs.overlays = [ yemou-scripts.overlays.default ];
+  nixpkgs.overlays = [ yemou-scripts.overlays.default ];
 
   environment.systemPackages = with pkgs; [
     git
@@ -16,6 +16,6 @@
 
   users.users.mou.packages = with pkgs; [
     croc
-    # yemou-scripts.packages."x86_64-linux".thm
+    thm
   ];
 }
