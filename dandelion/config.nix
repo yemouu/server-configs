@@ -24,8 +24,6 @@
   services = {
     acpid.enable = true;
     fail2ban.enable = true;
-    smartd.enable = true;
-    thermald.enable = true;
   };
 
   security.polkit.enable = true;
