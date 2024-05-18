@@ -1,5 +1,6 @@
 # Server Configurations
 
-| Hostname | Purpose     |
-| -------- | ----------- |
-| lily     | Home Server |
+| Hostname  | Type        |
+| --------- | ----------- |
+| lily      | Home Server |
+| dandelion | VPS         |
