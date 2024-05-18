@@ -15,7 +15,7 @@
   ];
 
   users.users.mou.packages = with pkgs; [
-    magic-wormhole
+    croc
     # yemou-scripts.packages."x86_64-linux".thm
   ];
 }
