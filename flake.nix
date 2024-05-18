@@ -31,10 +31,30 @@
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
-            home-manager.extraSpecialArgs = inputs;
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.mou = import ./lily/home.nix;
+            home-manager = {
+              extraSpecialArgs = inputs;
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.mou = import ./lily/home.nix;
+            };
+          }
+        ];
+      };
+      dandelion = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = inputs;
+        modules = [
+          impermanence.nixosModules.impermanence
+          ./dandelion/config.nix
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = inputs;
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.mou = import ./dandelion/home.nix;
+            };
           }
         ];
       };
