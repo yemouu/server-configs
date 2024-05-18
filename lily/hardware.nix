@@ -14,7 +14,6 @@
       systemd-boot = {
         configurationLimit = 50;
         consoleMode = "auto";
-        editor = false;
         enable = true;
       };
       timeout = 0;
