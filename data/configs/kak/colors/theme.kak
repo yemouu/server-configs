@@ -38,8 +38,8 @@ face global MenuBackground default,bright-white
 face global MenuInfo cyan,default+a
 face global Information default,bright-yellow
 face global Error default,bright-red+f
-face global DiagnosticError magenta # I don't know what these control yet
-face global DiagnosticWarning cyan  # I don't know what these control yet
+face global DiagnosticError red+b
+face global DiagnosticWarning yellow+b
 face global StatusLine default,white
 face global StatusLineMode magenta,default+b
 face global StatusLineInfo blue,default+b
