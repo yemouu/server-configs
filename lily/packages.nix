@@ -17,6 +17,6 @@
 
   users.users.mou.packages = with pkgs; [
     croc
-    yemou-scripts.packages."x86_64-linux".thm
+    thm
   ];
 }
