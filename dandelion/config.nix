@@ -2,6 +2,7 @@
   imports = [
     ../common/services/openssh.nix
     ./services/caddy.nix
+    ./services/frp.nix
     ./hardware.nix
     ./packages.nix
   ];
