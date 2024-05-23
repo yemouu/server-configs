@@ -14,6 +14,8 @@
     });
   };
 
+  networking.firewall.allowedTCPPorts = [ 7000 ];
+
   services.frp = {
     enable = true;
     role = "server";
