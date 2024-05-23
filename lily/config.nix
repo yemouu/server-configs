@@ -6,6 +6,7 @@
     ../common/services/openssh.nix
     ./hardware.nix
     ./packages.nix
+    ./services/frp.nix
   ];
 
   sops = {
