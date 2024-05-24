@@ -14,9 +14,7 @@
         type = "http";
         localIP = "::1";
         localPort = 8008;
-        subdomain = "matrix";
-        # This causes an error for some reason?
-        # remotePort = 443;
+        customDomains = [ "matrix.butwho.org" ];
         transport = {
           useEncryption = true;
           useCompression = true;
@@ -31,7 +29,7 @@
   };
 
   systemd.services.frp = {
-    restartTriggers = [ config.sops.templates.frpc-toml.path ];
+    restartTriggers = [ config.sops.templates.frpc-toml.content];
     serviceConfig = {
       LoadCredential = "frpc.toml:${config.sops.templates.frpc-toml.path}";
       ExecStart = lib.mkForce "${pkgs.frp}/bin/frpc --strict_config -c %d/frpc.toml";
