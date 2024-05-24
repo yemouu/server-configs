@@ -1,5 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
+    ../common/services/dendrite.nix
     ../common/services/dufs.nix
     ../common/services/esquid.nix
     ../common/services/libvirt.nix
@@ -53,6 +54,7 @@
         "/var/log"
         "/var/lib/nixos"
         "/var/lib/systemd/coredump"
+        { directory = "/var/lib/private"; mode = "0700"; }
       ];
       files = [ "/etc/machine-id" ];
     };
