@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
   sops = {
     secrets."frp/token".sopsFile = ../../secrets/dali.yaml;
-    templates.frp-token.content = builtins.readFile ((pkgs.formats.toml { }).generate "auth-token.toml" {
+    templates.frps-toml.content = builtins.readFile ((pkgs.formats.toml { }).generate "frps.toml" {
       bindPort = 7000;
       transport.tls.force = true;
       vhostHTTPPort = 8008;
@@ -21,8 +21,11 @@
     role = "server";
   };
 
-  systemd.services.frp.serviceConfig = {
-    LoadCredential = "frps.toml:${config.sops.templates.frp-token.path}";
-    ExecStart = lib.mkForce "${pkgs.frp}/bin/frps --strict_config -c %d/frps.toml";
+  systemd.services.frp = {
+    restartTriggers = [ config.sops.templates.frps-toml.path ];
+    serviceConfig = {
+      LoadCredential = "frps.toml:${config.sops.templates.frps-toml.path}";
+      ExecStart = lib.mkForce "${pkgs.frp}/bin/frps --strict_config -c %d/frps.toml";
+    };
   };
 }

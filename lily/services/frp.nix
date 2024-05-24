@@ -2,7 +2,7 @@
   sops = {
     secrets."frp/token".sopsFile = ../../secrets/dali.yaml;
     templates.frpc-toml.content = builtins.readFile ((pkgs.formats.toml { }).generate "frpc.toml" {
-      serverAddr = "2a01:4f8:c0c:580d::1";
+      serverAddr = "2a01:4ff:f0:41c7::1";
       serverPort = 7000;
       auth = {
         method = "token";
@@ -30,8 +30,11 @@
     role = "client";
   };
 
-  systemd.services.frp.serviceConfig = {
-    LoadCredential = "frpc.toml:${config.sops.templates.frpc-toml.path}";
-    ExecStart = lib.mkForce "${pkgs.frp}/bin/frpc --strict_config -c %d/frpc.toml";
+  systemd.services.frp = {
+    restartTriggers = [ config.sops.templates.frpc-toml.path ];
+    serviceConfig = {
+      LoadCredential = "frpc.toml:${config.sops.templates.frpc-toml.path}";
+      ExecStart = lib.mkForce "${pkgs.frp}/bin/frpc --strict_config -c %d/frpc.toml";
+    };
   };
 }
