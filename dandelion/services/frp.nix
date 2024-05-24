@@ -10,7 +10,6 @@
         token = "${config.sops.placeholder."frp/token"}";
       };
       allowPorts = [{ single = 8008; }];
-      subDomainHost = "butwho.org";
     });
   };
 
@@ -22,7 +21,7 @@
   };
 
   systemd.services.frp = {
-    restartTriggers = [ config.sops.templates.frps-toml.path ];
+    restartTriggers = [ config.sops.templates.frps-toml.content ];
     serviceConfig = {
       LoadCredential = "frps.toml:${config.sops.templates.frps-toml.path}";
       ExecStart = lib.mkForce "${pkgs.frp}/bin/frps --strict_config -c %d/frps.toml";
