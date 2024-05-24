@@ -41,7 +41,7 @@
         ];
       };
       dandelion = nixpkgs.lib.nixosSystem {
-        system = "aarch64-linux";
+        system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
           impermanence.nixosModules.impermanence
