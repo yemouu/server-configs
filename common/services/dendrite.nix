@@ -2,13 +2,17 @@
   imports = [ ./postgresql.nix ];
 
   sops = {
-    secrets."dendrite/postgresqlPW" = { };
+    secrets = {
+      "dendrite/postgresqlPW" = { };
+      "dendrite/registration_shared_secret" = { };
+    };
     templates = {
       postgresql-dendrite-pw.content = ''
         alter user dendrite with password '${config.sops.placeholder."dendrite/postgresqlPW"}';
       '';
       dendrite-env.content = ''
         POSTGRESQL_PW=${config.sops.placeholder."dendrite/postgresqlPW"}
+        REGISTRATION_SHARED_SECRET=${config.sops.placeholder."dendrite/registration_shared_secret"}
       '';
     };
   };
@@ -41,13 +45,13 @@
           enable_inbound = true;
           enable_outbound = true;
         };
-        # dns_cache.enable = true;
+        dns_cache.enable = true;
       };
       app_service_api.database.connection_string = "";
       client_api = {
         registration_disabled = true;
         guests_disabled = true;
-        # registration_shared_secret = "";
+        registration_shared_secret = "$REGISTRATION_SHARED_SECRET";
         enable_registration_captcha = false; # I need keys for this. Use hcaptcha?
       };
       federation_api.database.connection_string = "";
@@ -71,6 +75,10 @@
       room_server.database.connection_string = "";
       relay_api.database.connection_string = "";
       key_server.database.connection_string = "";
+      logging = [
+        { type = "std"; level = "warn"; }
+        { type = "file"; level = "info"; params.path = "./logs"; }
+      ];
     };
     openRegistration = false;
     loadCredential = [ "private_key:/data/matrix/matrix_key.pem" ];
