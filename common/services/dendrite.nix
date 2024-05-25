@@ -4,7 +4,7 @@
   sops = {
     secrets."dendrite/postgresqlPW" = { };
     templates = {
-      postgresql-dendrite-pw = ''
+      postgresql-dendrite-pw.content = ''
         alter user dendrite with password '${config.sops.placeholder."dendrite/postgresqlPW"}';
       '';
       dendrite-env.content = ''
