@@ -1,5 +1,3 @@
-# TODO: Instead of including my dotfiles with this repo, try and pull them in from git instead
-# Could use a git submodule?
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -13,6 +11,10 @@
     };
     impermanence.url = "github:nix-community/impermanence";
     sops-nix.url = "github:Mic92/sops-nix";
+    yemou-dotfiles = {
+      url = "git+https://codeberg.org/yemou/dotfiles";
+      flake = false;
+    };
     yemou-scripts = {
       url = "git+https://codeberg.org/yemou/scripts";
       # url = "path:/data/local-flakes/scripts";
