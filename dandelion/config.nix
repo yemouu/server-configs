@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
-    ../common/services/openssh.nix
+    ../modules/services/openssh.nix
     ./services/caddy.nix
     ./services/frp.nix
     ./hardware.nix

@@ -3,8 +3,8 @@
   # nixpkgs.config.permittedInsecurePackages = [ ];
 
   imports = [
-    ../common/editor.nix
-    ../common/development
+    ../modules/editor.nix
+    ../modules/development
   ];
 
   nixpkgs.overlays = [ yemou-scripts.overlays.default ];

@@ -1,11 +1,10 @@
-{ pkgs, yemou-scripts, ... }:
-{
+{ pkgs, yemou-scripts, ... }: {
   # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ ];
   # nixpkgs.config.permittedInsecurePackages = [ ];
 
   imports = [
-      ../common/editor.nix
-      ../common/development
+      ../modules/development
+      ../modules/editor.nix
   ];
 
   nixpkgs.overlays = [ yemou-scripts.overlays.default ];

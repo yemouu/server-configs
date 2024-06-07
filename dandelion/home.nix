@@ -1,4 +1,4 @@
 { ... }: {
-  imports = [ ../common/home.nix ];
+  imports = [ ../modules/home.nix ];
   home.stateVersion = "24.05";
 }

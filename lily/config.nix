@@ -1,13 +1,13 @@
 { config, pkgs, ... }: {
   imports = [
-    ../common/services/dendrite.nix
-    ../common/services/dufs.nix
-    ../common/services/esquid.nix
-    ../common/services/libvirt.nix
-    ../common/services/openssh.nix
     ./hardware.nix
     ./packages.nix
     ./services/frp.nix
+    ../modules/services/dendrite.nix
+    ../modules/services/dufs.nix
+    ../modules/services/esquid.nix
+    ../modules/services/libvirt.nix
+    ../modules/services/openssh.nix
   ];
 
   sops = {
