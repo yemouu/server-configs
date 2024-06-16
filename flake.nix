@@ -22,7 +22,7 @@
   };
 
   outputs = { self, nixpkgs, sops-nix, home-manager, impermanence, ... }@inputs:
-    let genSystemConfigs = nixpkgs.lib.genAttrs [ "dandelion" "lily" ]; in {
+    let genSystemConfigs = nixpkgs.lib.genAttrs [ "dandelion" "fly-agaric" "lily" ]; in {
       nixosConfigurations = genSystemConfigs (hostname:
         nixpkgs.lib.nixosSystem {
           specialArgs = inputs;

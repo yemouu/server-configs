@@ -1,6 +1,7 @@
 keys:
-  - &lily age1amaa55e7nusv904a9ucfvtnjlw4srtet42suehey6u3yc4t2xc5sdldepj
   - &dandelion age1p5y7px4qnlgxgxd6j5vg4wtpzs24fnh4808ws7gah3x89j66muasxz7ck2
+  - &fly-agaric age1tmfn7f2j8rhlg0gz3hcfjrwta3f0ecctc4dhpp6y8thtgta97c7q2vxnyl
+  - &lily age1amaa55e7nusv904a9ucfvtnjlw4srtet42suehey6u3yc4t2xc5sdldepj
 creation_rules:
   - path_regex: secrets/dali.yaml$
     key_groups:
@@ -11,6 +12,10 @@ creation_rules:
     key_groups:
       - age:
         - *dandelion
+  - path_regex: secrets/fly-agaric.yaml$
+    key_groups:
+      - age:
+        - *fly-agaric
   - path_regex: secrets/lily.yaml$
     key_groups:
       - age:
