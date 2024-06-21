@@ -4,6 +4,7 @@
     ./packages.nix
     ./services/caddy.nix
     ./services/frp.nix
+    ../modules/remoteBuildMachines.nix
     ../modules/services/caddy.nix
     ../modules/services/netbird.nix
     ../modules/services/openssh.nix
@@ -75,7 +76,8 @@
     gc.automatic = true;
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [ "flakes" "nix-command" ];
+      max-jobs = 0;
       use-xdg-base-directories = true;
     };
   };
