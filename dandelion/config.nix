@@ -4,6 +4,7 @@
     ./packages.nix
     ./services/caddy.nix
     ./services/frp.nix
+    ../modules/nix.nix
     ../modules/remoteBuildMachines.nix
     ../modules/services/caddy.nix
     ../modules/services/netbird.nix
