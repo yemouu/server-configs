@@ -2,16 +2,9 @@
   imports = [ ./postgresql.nix ];
 
   sops = {
-    secrets = {
-      "dendrite/postgresqlPW" = { };
-      "dendrite/registration_shared_secret" = { };
-    };
+    secrets."dendrite/registration_shared_secret" = { };
     templates = {
-      postgresql-dendrite-pw.content = ''
-        alter user dendrite with password '${config.sops.placeholder."dendrite/postgresqlPW"}';
-      '';
       dendrite-env.content = ''
-        POSTGRESQL_PW=${config.sops.placeholder."dendrite/postgresqlPW"}
         REGISTRATION_SHARED_SECRET=${config.sops.placeholder."dendrite/registration_shared_secret"}
       '';
     };
@@ -23,7 +16,6 @@
   }];
 
   services.postgresql = {
-    initialScript = config.sops.templates.postgresql-dendrite-pw.path;
     ensureDatabases = [ "dendrite" ];
     ensureUsers = [{
       name = "dendrite";
@@ -40,7 +32,7 @@
       global = {
         private_key = "$CREDENTIALS_DIRECTORY/private_key";
         server_name = "butwho.org";
-        database.connection_string = "postgresql://dendrite:$POSTGRESQL_PW@localhost/dendrite?sslmode=disable";
+        database.connection_string = "postgresql:///dendrite?host=/var/run/postgresql";
         presence = {
           enable_inbound = true;
           enable_outbound = true;
@@ -56,7 +48,7 @@
       };
       federation_api.database.connection_string = "";
       media_api = {
-        max_file_size_bytes = 52428800;
+        max_file_size_bytes = 8388608;
         dynamic_thumbnails = true;
         database.connection_string = "";
       };
