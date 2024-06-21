@@ -1,10 +1,11 @@
 { config, pkgs, ... }: {
   imports = [
-    ../modules/services/openssh.nix
-    ./services/caddy.nix
-    ./services/frp.nix
     ./hardware.nix
     ./packages.nix
+    ./services/caddy.nix
+    ./services/frp.nix
+    ../modules/services/caddy.nix
+    ../modules/services/openssh.nix
   ];
 
   sops = {
