@@ -3,6 +3,7 @@
     ./hardware.nix
     ./packages.nix
     ./services/frp.nix
+    ../modules/nix.nix
     ../modules/remoteBuilder.nix
     ../modules/services/dendrite.nix
     # ../modules/services/dufs.nix
