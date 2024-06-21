@@ -4,9 +4,10 @@
     ./packages.nix
     ./services/frp.nix
     ../modules/services/dendrite.nix
-    ../modules/services/dufs.nix
+    # ../modules/services/dufs.nix
     ../modules/services/esquid.nix
     ../modules/services/libvirt.nix
+    ../modules/services/netbird.nix
     ../modules/services/openssh.nix
   ];
 
