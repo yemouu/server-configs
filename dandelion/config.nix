@@ -5,6 +5,7 @@
     ./services/caddy.nix
     ./services/frp.nix
     ../modules/services/caddy.nix
+    ../modules/services/netbird.nix
     ../modules/services/openssh.nix
   ];
 
