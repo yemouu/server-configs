@@ -2,6 +2,7 @@
   home = {
     username = "mou";
     homeDirectory = "/home/${config.home.username}";
+    file.".ssh/allowed_signers".source = "${yemou-dotfiles}/ssh/allowed_signers";
   };
 
   xdg = {
@@ -19,6 +20,7 @@
       };
       "loksh".source = "${yemou-dotfiles}/config/loksh";
       "thm".source = "${yemou-dotfiles}/config/thm";
+      "git".source = "${yemou-dotfiles}/config/git";
     };
   };
 
@@ -26,19 +28,5 @@
     ENV = "${config.xdg.configHome}/loksh/rc";
     HISTCONTROL = "ignoredups:ignorespace";
     HISTFILE = "${config.xdg.cacheHome}/loksh_history";
-  };
-
-  programs = {
-    git = {
-      enable = true;
-      userEmail = "dev@lilac.pink";
-      userName = "yemou";
-      extraConfig = {
-        commit.gpgsign = true;
-        gpg.format = "ssh";
-        user.signingkey = "~/.ssh/id_ed25519.pub";
-        gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-      };
-    };
   };
 }
