@@ -7,6 +7,7 @@
     ../modules/nix.nix
     ../modules/remoteBuildMachines.nix
     ../modules/services/caddy.nix
+    ../modules/services/fail2ban.nix
     ../modules/services/netbird.nix
     ../modules/services/openssh.nix
   ];
@@ -27,10 +28,7 @@
     firewall.enable = true;
   };
 
-  services = {
-    acpid.enable = true;
-    fail2ban.enable = true;
-  };
+  services.acpid.enable = true;
 
   security.polkit.enable = true;
 

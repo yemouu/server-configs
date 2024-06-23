@@ -2,12 +2,13 @@
   imports = [
     ./hardware.nix
     ./packages.nix
+    ./services/fail2ban.nix
     ./services/frp.nix
     ../modules/nix.nix
     ../modules/remoteBuilder.nix
     ../modules/services/dendrite.nix
-    # ../modules/services/dufs.nix
     ../modules/services/esquid.nix
+    ../modules/services/fail2ban.nix
     ../modules/services/libvirt.nix
     ../modules/services/netbird.nix
     ../modules/services/openssh.nix
@@ -31,7 +32,6 @@
 
   services = {
     acpid.enable = true;
-    fail2ban.enable = true;
     smartd.enable = true;
     thermald.enable = true;
   };
