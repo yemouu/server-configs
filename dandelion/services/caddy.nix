@@ -15,7 +15,7 @@
           <body>
             <h1>Under construction</h1>
             <p>More to come soon...</p>
-            <p>contact@butwho.org</p>
+            <p><a href="mailto:contact@butwho.org">contact@butwho.org</a></p>
           </body>
         </html>
         HTML 200
