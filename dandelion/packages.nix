@@ -15,7 +15,7 @@
   ];
 
   users.users.mou.packages = with pkgs; [
-    croc
+    magic-wormhole-rs
     thm
   ];
 }

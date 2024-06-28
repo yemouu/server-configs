@@ -3,8 +3,8 @@
   # nixpkgs.config.permittedInsecurePackages = [ ];
 
   imports = [
-      ../modules/development
-      ../modules/editor.nix
+    ../modules/development
+    ../modules/editor.nix
   ];
 
   nixpkgs.overlays = [ yemou-scripts.overlays.default ];
@@ -15,7 +15,7 @@
   ];
 
   users.users.mou.packages = with pkgs; [
-    croc
+    magic-wormhole-rs
     thm
   ];
 }
