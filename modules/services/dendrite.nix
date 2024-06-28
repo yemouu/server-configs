@@ -48,7 +48,7 @@
       };
       federation_api.database.connection_string = "";
       media_api = {
-        max_file_size_bytes = 8388608;
+        max_file_size_bytes = 104857600;
         dynamic_thumbnails = true;
         database.connection_string = "";
       };
