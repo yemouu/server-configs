@@ -12,6 +12,7 @@
     ../modules/services/libvirt.nix
     ../modules/services/netbird.nix
     ../modules/services/openssh.nix
+    ../modules/services/vault.nix
   ];
 
   sops = {
